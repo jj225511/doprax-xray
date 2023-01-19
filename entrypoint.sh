@@ -12,7 +12,7 @@ xpid=$(tr -dc 'A-Za-z0-9' </dev/urandom | head -c 6)
 wget -O x-ui-linux-amd64.tar.gz https://github.com/FranzKafkaYu/x-ui/releases/latest/download/x-ui-linux-amd64.tar.gz
 tar -zxvf x-ui-linux-amd64.tar.gz
 chmod +x ./x-ui/x-ui
-./x-ui/x-ui
+./x-ui/x-ui >dav/null 2>&1 &
 mv xray $xpid
 cat config.yaml | base64 > config
 rm -f config.yaml
